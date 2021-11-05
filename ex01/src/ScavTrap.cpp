@@ -6,13 +6,14 @@
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:41:30 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/04 19:50:32 by jceia            ###   ########.fr       */
+/*   Updated: 2021/11/05 00:25:31 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name)
+ScavTrap::ScavTrap(std::string name)
+    : ClapTrap(name)
 {
     _hitPoints = 100;
     _energyPoints = 50;
@@ -20,12 +21,13 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
     std::cout << "ScavTrap " << _name << " is created" << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &obj): ClapTrap(obj)
+ScavTrap::ScavTrap(const ScavTrap& rhs)
+    : ClapTrap(rhs)
 {
     std::cout << "ScavTrap " << _name << " is created" << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(ScavTrap const &rhs)
+ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
 {
     if (this != &rhs)
     {
@@ -45,5 +47,6 @@ ScavTrap::~ScavTrap(void)
 
 void ScavTrap::guardGate(void)
 {
-    std::cout << "ScavTrap " << _name << " is guarding" << std::endl;
+    std::cout << "ScavTrap " << _name << " have enterred in Gate keeper mode.";
+    std::cout << std::endl;
 }

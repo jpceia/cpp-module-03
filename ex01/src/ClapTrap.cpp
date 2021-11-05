@@ -6,7 +6,7 @@
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:39 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/04 19:51:18 by jceia            ###   ########.fr       */
+/*   Updated: 2021/11/05 00:25:34 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(std::string name)
 	std::cout << "ClapTrap " << _name << " is created" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap const &obj)
+ClapTrap::ClapTrap(const ClapTrap& obj)
 {
 	*this = obj;
 }
@@ -31,7 +31,7 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap " << _name << " is destroyed" << std::endl;
 }
 
-ClapTrap &ClapTrap::operator= (ClapTrap const &rhs)
+ClapTrap &ClapTrap::operator= (const ClapTrap& rhs)
 {
 	if (this != &rhs)
 	{
@@ -44,7 +44,7 @@ ClapTrap &ClapTrap::operator= (ClapTrap const &rhs)
 	return (*this);
 }
 
-void ClapTrap::attack(std::string const &target)
+void ClapTrap::attack(const std::string& target)
 {
 	if (_energyPoints < 5)
 		std::cout << "ClapTrap " << _name << " is out of energy" << std::endl;

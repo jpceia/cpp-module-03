@@ -6,23 +6,24 @@
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:29:07 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/04 19:43:53 by jceia            ###   ########.fr       */
+/*   Updated: 2021/11/05 00:25:36 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
+# include <iostream>
 
 class ScavTrap: public ClapTrap
 {
     public:
         ScavTrap(std::string name);
-        ScavTrap(ScavTrap const &obj);
+        ScavTrap(const ScavTrap& rhs);
         ~ScavTrap(void);
 
-        ScavTrap &operator=(ScavTrap const &rhs);
+        ScavTrap &operator=(const ScavTrap& rhs);
 
         void guardGate(void);
 };

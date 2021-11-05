@@ -6,7 +6,7 @@
 /*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:59 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/04 19:40:23 by jceia            ###   ########.fr       */
+/*   Updated: 2021/11/05 00:25:35 by jceia            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,21 @@
 class ClapTrap
 {
 protected:
-	std::string		_name;
-	unsigned int	_hitPoints;
-	unsigned int	_energyPoints;
-	unsigned int	_attackDamage;
+    std::string        _name;
+    unsigned int    _hitPoints;
+    unsigned int    _energyPoints;
+    unsigned int    _attackDamage;
 
 public:
-	ClapTrap(std::string name);
-	ClapTrap(ClapTrap const &obj);
-	~ClapTrap(void);
+    ClapTrap(std::string name);
+    ClapTrap(const ClapTrap& rhs);
+    ~ClapTrap(void);
 
-	ClapTrap &operator= (ClapTrap const &rhs);
+    ClapTrap &operator= (const ClapTrap& rhs);
 
-	void attack(std::string const &target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+    void attack(const std::string& target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
 };
 
 #endif
