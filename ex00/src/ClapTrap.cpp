@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:39 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/15 00:11:32 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/15 00:17:18 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap(void) :
     std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) :
+ClapTrap::ClapTrap(const std::string& name) :
     _name(name),
     _hitPoints(10),
     _energyPoints(10),
@@ -43,10 +43,13 @@ ClapTrap::~ClapTrap()
 
 ClapTrap &ClapTrap::operator= (const ClapTrap& rhs)
 {
-    _name = rhs._name;
-    _hitPoints = rhs._hitPoints;
-    _energyPoints = rhs._energyPoints;
-    _attackDamage = rhs._attackDamage;
+    if (this != &rhs)
+    {
+        _name = rhs._name;
+        _hitPoints = rhs._hitPoints;
+        _energyPoints = rhs._energyPoints;
+        _attackDamage = rhs._attackDamage;
+    }
     std::cout << "ClapTrap " << _name << " assignment operator is called"
         << std::endl;
     return (*this);

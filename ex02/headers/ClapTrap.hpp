@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:59 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/04 23:20:51 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/15 00:13:24 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,28 @@
 
 class ClapTrap
 {
-protected:
-	std::string		_name;
-	unsigned int	_hitPoints;
-	unsigned int	_energyPoints;
-	unsigned int	_attackDamage;
+private:
+    std::string     _name;
+    unsigned int    _hitPoints;
+    unsigned int    _energyPoints;
+    unsigned int    _attackDamage;
 
 public:
-	ClapTrap(std::string name);
-	ClapTrap(const ClapTrap& rhs);
-	~ClapTrap(void);
+    // Constructors
+    ClapTrap(void);
+    ClapTrap(const std::string& name);
+    ClapTrap(const ClapTrap& rhs);
 
-	ClapTrap &operator= (const ClapTrap& rhs);
+    // Destructor
+    ~ClapTrap(void);
 
-	void attack(const std::string& target);
-	void takeDamage(unsigned int amount);
-	void beRepaired(unsigned int amount);
+    // Assignment operator overload
+    ClapTrap &operator= (const ClapTrap& rhs);
+
+    // Other methods
+    void attack(const std::string& target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
 };
 
 #endif
