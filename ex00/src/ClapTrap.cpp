@@ -6,18 +6,27 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:39 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/15 00:07:07 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/15 00:11:32 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name)
-    : _name(name)
+ClapTrap::ClapTrap(void) :
+    _name("ClapTrap"),
+    _hitPoints(10),
+    _energyPoints(10),
+    _attackDamage(0)
 {
-    _hitPoints = 10;
-    _energyPoints = 10;
-    _attackDamage = 0;
+    std::cout << "ClapTrap default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name) :
+    _name(name),
+    _hitPoints(10),
+    _energyPoints(10),
+    _attackDamage(0)
+{
     std::cout << "ClapTrap " << _name << " is created" << std::endl;
 }
 

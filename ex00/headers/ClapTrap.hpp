@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:59 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/14 19:25:15 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/15 00:11:55 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ private:
 
 public:
     // Constructors
+    ClapTrap(void);
     ClapTrap(std::string name);
     ClapTrap(const ClapTrap& rhs);
 
