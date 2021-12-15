@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:59 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/05 00:14:17 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/14 19:25:15 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,17 @@ private:
     unsigned int    _attackDamage;
 
 public:
+    // Constructors
     ClapTrap(std::string name);
     ClapTrap(const ClapTrap& rhs);
+
+    // Destructor
     ~ClapTrap(void);
 
+    // Assignment operator overload
     ClapTrap &operator= (const ClapTrap& rhs);
 
+    // Other methods
     void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);

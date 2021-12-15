@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:39 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/05 00:16:18 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/15 00:07:07 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ ClapTrap::ClapTrap(std::string name)
 ClapTrap::ClapTrap(const ClapTrap& rhs)
 {
     *this = rhs;
+    std::cout << "ClapTrap " << _name << " is copied" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
@@ -37,20 +38,21 @@ ClapTrap &ClapTrap::operator= (const ClapTrap& rhs)
     _hitPoints = rhs._hitPoints;
     _energyPoints = rhs._energyPoints;
     _attackDamage = rhs._attackDamage;
-    std::cout << "ClapTrap " << _name << " is copied" << std::endl;
+    std::cout << "ClapTrap " << _name << " assignment operator is called"
+        << std::endl;
     return (*this);
 }
 
 void ClapTrap::attack(const std::string& target)
 {
     if (_energyPoints < 5)
-        std::cout << "ClapTrap " << _name << " is out of energy" << std::endl;
+        std::cout << "ClapTrap " << _name << " is out of energy." << std::endl;
     else
     {
         // ClapTrap <name> attack <target>, causing <damage> points of damage!
-        std::cout << "ClapTrap " << _name << " attack " << target;
-        std::cout << ", causing " << _attackDamage << " points of damage!";
-        std::cout << std::endl;
+        std::cout << "ClapTrap " << _name << " attack " << target
+            << ", causing " << _attackDamage << " points of damage!"
+            << std::endl;
         _energyPoints -= 5;
     }
 }
