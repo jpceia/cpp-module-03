@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:29:07 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/04 23:32:23 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/18 23:00:19 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,21 @@
 
 class ScavTrap: public ClapTrap
 {
-	public:
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap& rhs);
-		~ScavTrap(void);
+public:
+    // Constructors
+    ScavTrap(void);
+    ScavTrap(const std::string& name);
+    ScavTrap(const ScavTrap& rhs);
 
-		ScavTrap &operator=(const ScavTrap& rhs);
+    // Destructor
+    ~ScavTrap(void);
 
-		void guardGate(void);
+    // Assignment operator overload
+    ScavTrap& operator=(const ScavTrap& rhs);
+
+    // Other methods
+    void attack(const std::string& target);
+    void guardGate(void);
 };
 
 #endif
