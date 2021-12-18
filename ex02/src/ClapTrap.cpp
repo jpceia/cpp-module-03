@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:39 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/15 00:17:18 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/15 00:38:35 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ClapTrap::~ClapTrap()
     std::cout << "ClapTrap " << _name << " is destroyed" << std::endl;
 }
 
-ClapTrap &ClapTrap::operator= (const ClapTrap& rhs)
+ClapTrap& ClapTrap::operator= (const ClapTrap& rhs)
 {
     if (this != &rhs)
     {

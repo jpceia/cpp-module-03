@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:59 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/15 00:13:24 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/18 22:43:39 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-private:
+protected:
     std::string     _name;
     unsigned int    _hitPoints;
     unsigned int    _energyPoints;
@@ -30,13 +30,19 @@ public:
     ClapTrap(const ClapTrap& rhs);
 
     // Destructor
-    ~ClapTrap(void);
+    virtual ~ClapTrap(void);
 
     // Assignment operator overload
-    ClapTrap &operator= (const ClapTrap& rhs);
+    virtual ClapTrap& operator= (const ClapTrap& rhs);
+
+    // Getters
+    std::string     getName(void) const;
+    unsigned int    getHitPoints(void) const;
+    unsigned int    getEnergyPoints(void) const;
+    unsigned int    getAttackDamage(void) const;
 
     // Other methods
-    void attack(const std::string& target);
+    virtual void attack(const std::string& target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 };
