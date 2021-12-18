@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:39 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/15 00:17:18 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/18 22:44:33 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ ClapTrap::~ClapTrap()
     std::cout << "ClapTrap " << _name << " is destroyed" << std::endl;
 }
 
-ClapTrap &ClapTrap::operator= (const ClapTrap& rhs)
+ClapTrap& ClapTrap::operator= (const ClapTrap& rhs)
 {
     if (this != &rhs)
     {
@@ -53,6 +53,26 @@ ClapTrap &ClapTrap::operator= (const ClapTrap& rhs)
     std::cout << "ClapTrap " << _name << " assignment operator is called"
         << std::endl;
     return (*this);
+}
+
+std::string ClapTrap::getName(void) const
+{
+    return _name;
+}
+
+unsigned int ClapTrap::getHitPoints(void) const
+{
+    return _hitPoints;
+}
+
+unsigned int ClapTrap::getEnergyPoints(void) const
+{
+    return _energyPoints;
+}
+
+unsigned int ClapTrap::getAttackDamage(void) const
+{
+    return _attackDamage;
 }
 
 void ClapTrap::attack(const std::string& target)

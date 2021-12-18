@@ -33,7 +33,13 @@ public:
     virtual ~ClapTrap(void);
 
     // Assignment operator overload
-    virtual ClapTrap &operator= (const ClapTrap& rhs);
+    virtual ClapTrap& operator= (const ClapTrap& rhs);
+
+    // Getters
+    std::string     getName(void) const;
+    unsigned int    getHitPoints(void) const;
+    unsigned int    getEnergyPoints(void) const;
+    unsigned int    getAttackDamage(void) const;
 
     // Other methods
     void attack(const std::string& target);
