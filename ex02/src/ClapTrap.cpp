@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:39 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/15 00:38:35 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/18 23:19:40 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ ClapTrap& ClapTrap::operator= (const ClapTrap& rhs)
 void ClapTrap::attack(const std::string& target)
 {
     if (_energyPoints < 5)
-        std::cout << "ClapTrap " << _name << " is out of energy." << std::endl;
+        std::cout << "ClapTrap " << _name << " is out of energy" << std::endl;
     else
     {
         // ClapTrap <name> attack <target>, causing <damage> points of damage!
@@ -79,8 +79,8 @@ void ClapTrap::takeDamage(unsigned int amount)
     else
     {
         _hitPoints -= amount;
-        std::cout << "ClapTrap " << _name << " takes " << amount << " damage";
-        std::cout << std::endl;
+        std::cout << "ClapTrap " << _name << " takes " << amount << " damage"
+            << std::endl;
     }
 }
 
@@ -89,13 +89,12 @@ void ClapTrap::beRepaired(unsigned int amount)
     if (_hitPoints + amount > 100)
     {
         _hitPoints = 100;
-        std::cout << "ClapTrap " << _name << " is fully repaired";
-        std::cout << std::endl;
+        std::cout << "ClapTrap " << _name << " is fully repaired" << std::endl;
     }
     else
     {
         _hitPoints += amount;
-        std::cout << "ClapTrap " << _name << " is repaired by " << amount;
-        std::cout << std::endl;
+        std::cout << "ClapTrap " << _name << " is repaired by " << amount
+            << " points" << std::endl;
     }
 }
