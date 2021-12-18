@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:29:07 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/15 00:13:52 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/18 22:59:15 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,21 @@
 
 class ScavTrap: public ClapTrap
 {
-    public:
-        // Constructors
-        ScavTrap(void);
-        ScavTrap(const std::string& name);
-        ScavTrap(const ScavTrap& rhs);
+public:
+    // Constructors
+    ScavTrap(void);
+    ScavTrap(const std::string& name);
+    ScavTrap(const ScavTrap& rhs);
 
-        // Destructor
-        ~ScavTrap(void);
+    // Destructor
+    ~ScavTrap(void);
 
-        // Assignment operator overload
-        ScavTrap &operator=(const ScavTrap& rhs);
+    // Assignment operator overload
+    ScavTrap& operator=(const ScavTrap& rhs);
 
-        // Other methods
-        void guardGate(void);
+    // Other methods
+    void attack(const std::string& target);
+    void guardGate(void);
 };
 
 #endif
