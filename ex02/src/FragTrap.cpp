@@ -3,16 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 23:28:19 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/05 00:17:51 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/15 00:50:54 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string name)
+FragTrap::FragTrap(void) :
+    ClapTrap("FragTrap")
+{
+    _hitPoints = 100;
+    _energyPoints = 100;
+    _attackDamage = 30;
+    std::cout << "FragTrap default constructor called" << std::endl;
+}
+
+FragTrap::FragTrap(const std::string& name)
     : ClapTrap(name)
 {
     _hitPoints = 100;
@@ -24,19 +33,14 @@ FragTrap::FragTrap(std::string name)
 FragTrap::FragTrap(const FragTrap& rhs)
     : ClapTrap(rhs)
 {
-    std::cout << "FragTrap " << _name << " is created" << std::endl;
+    std::cout << "FragTrap " << _name << " is copied" << std::endl;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap& rhs)
 {
-    if (this != &rhs)
-    {
-        _name = rhs._name;
-        _hitPoints = rhs._hitPoints;
-        _energyPoints = rhs._energyPoints;
-        _attackDamage = rhs._attackDamage;
-        std::cout << "FragTrap " << _name << " is copied" << std::endl;
-    }
+    ClapTrap::operator=(rhs);
+    std::cout << "FragTrap " << _name << " assignment operator is called"
+        << std::endl;
     return (*this);
 }
 
@@ -47,5 +51,6 @@ FragTrap::~FragTrap(void)
 
 void FragTrap::highFivesGuys(void)
 {
-    std::cout << "FragTrap " << _name << " high fives guys" << std::endl;
+    std::cout << "FragTrap " << _name << " requests high-fives to the guys"
+        << std::endl;
 }

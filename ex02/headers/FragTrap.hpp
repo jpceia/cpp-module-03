@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jceia <jceia@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 23:27:18 by jceia             #+#    #+#             */
-/*   Updated: 2021/11/05 00:11:01 by jceia            ###   ########.fr       */
+/*   Updated: 2021/12/18 23:01:07 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,20 @@
 
 class FragTrap: public ClapTrap
 {
-	public:
-		FragTrap(std::string name);
-		FragTrap(const FragTrap& rhs);
-		~FragTrap(void);
+public:
+	// Constructors
+	FragTrap(void);
+	FragTrap(const std::string& name);
+	FragTrap(const FragTrap& rhs);
 
-		FragTrap &operator=(const FragTrap& rhs);
+	// Destructor
+	~FragTrap(void);
 
-		void highFivesGuys(void);
+	// Assignment operator overload
+	FragTrap& operator=(const FragTrap& rhs);
+
+	// Other methods
+	void highFivesGuys(void);
 };
 
 
