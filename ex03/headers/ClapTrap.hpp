@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 19:18:59 by jceia             #+#    #+#             */
-/*   Updated: 2021/12/18 22:43:39 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/18 23:56:36 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ public:
     virtual ClapTrap& operator= (const ClapTrap& rhs);
 
     // Getters
-    std::string     getName(void) const;
+    virtual std::string getName(void) const;
     unsigned int    getHitPoints(void) const;
     unsigned int    getEnergyPoints(void) const;
     unsigned int    getAttackDamage(void) const;

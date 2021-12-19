@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 00:53:13 by jpceia            #+#    #+#             */
-/*   Updated: 2021/12/18 21:58:36 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/18 23:57:03 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
     std::string _name;
+
 public:
     // Constructors
     DiamondTrap(void);
@@ -33,12 +34,11 @@ public:
     // Assignment operator overload
     DiamondTrap& operator=(const DiamondTrap& rhs);
 
-    using FragTrap::_hitPoints;
-    using ScavTrap::_energyPoints;
-    using FragTrap::_attackDamage;
-    using ScavTrap::attack;
-    
+    // Getters
+    std::string getName(void) const;
+
     // Other methods
+    using ScavTrap::attack;
     void whoAmI(void);
 };
 

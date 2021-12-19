@@ -6,7 +6,7 @@
 /*   By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/15 01:10:19 by jpceia            #+#    #+#             */
-/*   Updated: 2021/12/18 22:48:42 by jpceia           ###   ########.fr       */
+/*   Updated: 2021/12/18 23:58:03 by jpceia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,18 @@
 DiamondTrap::DiamondTrap(void) : _name("DiamondTrap")
 {
     ClapTrap::_name = _name + "_clap_name";
+    _hitPoints = 100;
+    _energyPoints = 50;
+    _attackDamage = 30;
     std::cout << "DiamondTrap default constructor called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string& name) : _name(name)
 {
     ClapTrap::_name = _name + "_clap_name";
+    _hitPoints = 100;
+    _energyPoints = 50;
+    _attackDamage = 30;
     std::cout << "DiamondTrap constructor called" << std::endl;
 }
 
@@ -38,8 +44,16 @@ DiamondTrap::~DiamondTrap(void)
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& rhs)
 {
     ClapTrap::operator=(rhs);
-    std::cout << "DiamondTrap assignment operator called" << std::endl;
+    if (this != &rhs)
+        this->_name = rhs._name;
+    std::cout << "DiamondTrap " << _name << " assignment operator is called"
+        << std::endl;
     return *this;
+}
+
+std::string DiamondTrap::getName(void) const
+{
+    return _name;
 }
 
 void DiamondTrap::whoAmI(void)
