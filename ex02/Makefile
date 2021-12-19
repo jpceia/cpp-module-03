@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jceia <jceia@student.42.fr>                +#+  +:+       +#+         #
+#    By: jpceia <joao.p.ceia@gmail.com>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/04 19:07:05 by jceia             #+#    #+#              #
-#    Updated: 2021/11/05 00:23:26 by jceia            ###   ########.fr        #
+#    Updated: 2021/12/19 15:03:36 by jpceia           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        = flagtrap
+NAME        = fragtrap
 
 INC_DIR     = headers
 SRC_DIR     = src
